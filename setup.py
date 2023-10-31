@@ -5,7 +5,7 @@ setup(
     url='https://github.com/dsymbol/decipher',
     author='dsymbol',
     install_requires=[
-        'openai-whisper==20230314',
+        'openai-whisper==20230918',
         'tqdm'
     ],
     packages=find_packages(),

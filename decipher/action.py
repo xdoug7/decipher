@@ -30,7 +30,12 @@ def transcribe(video_in, output_dir, model, language, task, subs):
     writer = get_writer("srt", ".")
 
     tmp_srt = "".join([random.choice(string.ascii_lowercase) for _ in range(15)])
-    writer(result, tmp_srt)
+    options = {
+        "highlight_words": False,
+        "max_line_count": 42,
+        "max_line_width": 1
+    }
+    writer(result, tmp_srt, options)
     srt_file = video_in.stem + ".srt"
     shutil.move(tmp_srt + ".srt", srt_file)
 
